@@ -1,0 +1,26 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/defaultBackground"
+    tools:context="com.software.group58.chess58.LoadingActivity"
+    >
+
+    <ImageView
+        android:id="@+id/openingLogo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/chess_logo"
+        android:contentDescription="Group 58 Logo" />
+
+    <!-- ProgressBar
+        style="@android:style/Widget.ProgressBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/openingLogo"
+        android:id="@+id/progressBar"
+        android:indeterminateDrawable="@drawable/circular_progress"
+    /-->
+
+
+</RelativeLayout>
