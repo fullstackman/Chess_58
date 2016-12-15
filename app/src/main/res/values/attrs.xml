@@ -9,4 +9,9 @@
         <attr name="metaButtonBarButtonStyle" format="reference" />
     </declare-styleable>
 
+    <declare-styleable name="Tile">
+        <attr name="currentPiece" format="string" />
+        <attr name="label" format="string" />
+    </declare-styleable>
+
 </resources>
