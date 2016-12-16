@@ -35,7 +35,7 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         hide();
         setContentView(R.layout.game_activity);
-
+        turn = 1;
         Board.initializeBoard();
     }
 
@@ -78,8 +78,6 @@ public class GameActivity extends AppCompatActivity {
                 return;
             }
             //at this point it is safe to act on this piece
-            Toast.makeText(GameActivity.this, "First input is: "+currentLabel.substring(currentLabel.length()-2),
-                    Toast.LENGTH_SHORT).show();
             firstSelection = false;
         }
         else{
@@ -88,8 +86,6 @@ public class GameActivity extends AppCompatActivity {
             currentLabel = getResources().getResourceName(target.getId());
 
             if(target != source){
-                Toast.makeText(GameActivity.this, "Second input is: "+currentLabel.substring(currentLabel.length()-2),
-                        Toast.LENGTH_SHORT).show();
                 boolean foundMatch = false;
                 for(String z: validMoves){
                     if (z.equals( currentLabel.substring(currentLabel.length()-2) ) ){
@@ -184,6 +180,8 @@ public class GameActivity extends AppCompatActivity {
 
                     } catch (Exception ioe) {
                         ioe.printStackTrace();
+                        Toast.makeText(GameActivity.this, "failed to write game data",
+                                Toast.LENGTH_LONG).show();
                     }
 
                 }
