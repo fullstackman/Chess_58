@@ -11,6 +11,7 @@
     <string name="tileSize">30dp</string>
     <string name="tilePadding">30dp</string>
 
+    <string name="whiteKnight">wK</string>
 
     <string name="action_settings">Settings</string>
 </resources>

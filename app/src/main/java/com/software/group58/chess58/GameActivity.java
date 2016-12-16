@@ -4,6 +4,7 @@ import android.media.Image;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -57,9 +58,12 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void handleInput(View touchedTile){
+        String currentLabel;
         if(firstSelection){
             source = (Tile) touchedTile;
-            //Log.d("Developer Notes","OnPostCreate is happening!");
+            currentLabel = getResources().getResourceName(source.getId());
+            Toast.makeText(GameActivity.this, "You touched "+currentLabel.substring(currentLabel.length()-2),
+                    Toast.LENGTH_SHORT).show();
             if(source.getDrawable() == null)
                 return;
             else
@@ -69,9 +73,9 @@ public class GameActivity extends AppCompatActivity {
             target = (Tile) touchedTile;
             if(target != source){
                 target.setImageDrawable(source.getDrawable());
-                target.label = source.label;
+                target.currentPiece = source.currentPiece;
                 source.setImageDrawable(null);
-                source.label = "empty";
+                source.currentPiece = "empty";
             }
             firstSelection = true;
         }

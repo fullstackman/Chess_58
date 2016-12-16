@@ -16,28 +16,32 @@ public class Tile extends ImageView {
     public Tile(Context givenContext){
         super(givenContext);
         this.currentPiece="empty";
-        this.setBackgroundColor(250);
         this.label="nowhere";
     }
 
     public Tile(Context givenContext, AttributeSet givenAttrs){
         super(givenContext, givenAttrs);
         this.currentPiece="empty";
-        this.setBackgroundColor(250);
         this.label="nowhere";
     }
 
     public Tile(Context givenContext, AttributeSet givenAttrs, int givenStyleAttr){
         super(givenContext, givenAttrs, givenStyleAttr);
         this.currentPiece="empty";
-        this.setBackgroundColor(250);
         this.label="nowhere";
     }
 
     public Tile(Context givenContext, AttributeSet givenAttrs, int givenStyleAttr, int givenStyleRes){
         super(givenContext, givenAttrs, givenStyleAttr, givenStyleRes);
         this.currentPiece="empty";
-        this.setBackgroundColor(250);
         this.label="nowhere";
+    }
+
+    public String getLabel(){
+        return label;
+    }
+
+    public String getCurrentPiece(){
+        return currentPiece;
     }
 }
