@@ -19,6 +19,7 @@ public class GameActivity extends AppCompatActivity {
     public static String whiteKing[] = new String[]{"e1","safe"};
     public static boolean stalemate = false;
     public static String passant = "";
+    String currentLabel;
     ArrayList<String> validMoves = new ArrayList<String>();
 
     boolean firstSelection = true;
@@ -43,8 +44,8 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void handleInput(View touchedTile){
-        String currentLabel;
-
+        if(gameOver)
+            return;
         if(turn % 2 == 0)
             player = "Black";
         else
@@ -53,8 +54,6 @@ public class GameActivity extends AppCompatActivity {
         if(firstSelection){
             source = (TileView) touchedTile;
             currentLabel = getResources().getResourceName(source.getId());
-            /*Toast.makeText(GameActivity.this, "You touched "+currentLabel.substring(currentLabel.length()-2),
-                    Toast.LENGTH_SHORT).show();*/
             if(source.getDrawable() == null)
                 return;
 
@@ -75,18 +74,101 @@ public class GameActivity extends AppCompatActivity {
                 return;
             }
             //at this point it is safe to act on this piece
+            Toast.makeText(GameActivity.this, "First input is: "+currentLabel.substring(currentLabel.length()-2),
+                    Toast.LENGTH_SHORT).show();
             firstSelection = false;
         }
         else{
             target = (TileView) touchedTile;
+            String startingLabel = currentLabel.substring(currentLabel.length()-2);
+            currentLabel = getResources().getResourceName(target.getId());
+
             if(target != source){
+                Toast.makeText(GameActivity.this, "Second input is: "+currentLabel.substring(currentLabel.length()-2),
+                        Toast.LENGTH_SHORT).show();
+                boolean foundMatch = false;
+                for(String z: validMoves){
+                    if (z.equals( currentLabel.substring(currentLabel.length()-2) ) ){
+                        boolean leftKingInCheck;
+                        leftKingInCheck = !executeMove(startingLabel, currentLabel.substring(currentLabel.length()-2), "", true,0);
+                        if(leftKingInCheck){
+                            Toast.makeText(GameActivity.this, "Don't leave your king in check!\nTry again...",
+                                    Toast.LENGTH_SHORT).show();
+                            firstSelection = true;
+                            return;
+                        }
+                        foundMatch = true;
+                        break;
+                    }
+                }
+                if(!foundMatch){
+                    Toast.makeText(GameActivity.this, "Illegal move.\nTry again...",
+                            Toast.LENGTH_SHORT).show();
+                    firstSelection = true;
+                    return;
+                }
+
                 target.setImageDrawable(source.getDrawable());
                 target.currentPiece = source.currentPiece;
                 source.setImageDrawable(null);
                 source.currentPiece = "empty";
+
+                /*TODO: Need to incorporate some UI elements that indicate check and checkmate!*/
+                boolean putEnemyInCheck;
+                if(player.equals("White")){
+                    putEnemyInCheck = Rules.leavesKingInCheck(blackKing[0], "b");
+                    if(putEnemyInCheck){
+                        blackKing[1] = "check";
+                        gameOver = Rules.determineCheckmate(turn+1);
+                        if(gameOver){
+                            Toast.makeText(GameActivity.this, "Checkmate! White wins!",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                            Toast.makeText(GameActivity.this, "Check!",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    else
+                        blackKing[1] = "safe";
+                }
+                else{
+                    putEnemyInCheck = Rules.leavesKingInCheck(whiteKing[0], "w");
+                    if(putEnemyInCheck){
+                        whiteKing[1] = "check";
+                        gameOver = Rules.determineCheckmate(turn+1);
+                        if(gameOver){
+                            Toast.makeText(GameActivity.this, "Checkmate! Black wins!",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                            Toast.makeText(GameActivity.this, "Check!",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    else
+                        whiteKing[1] = "safe";
+                }
+
+                //support for our castling implementation?
+
+                /*TODO: Might be possible to implement undo button here*/
+                ++turn;
+                firstSelection = true;
+
+                if(gameOver){
+                    /*TODO: Show button the lets user save game. Give it an onclicklistener and have
+                    that function start a dialog that asks for a name. Then do serialization and write
+                    the file to system memory
+                    My tip is to just implement the serialization first and then add buttons and
+                    dialogs later*/
+                }
+                return;
             }
+            // Here the player must have touched the starting piece again
+            Toast.makeText(GameActivity.this, "Move canceled...",
+                    Toast.LENGTH_SHORT).show();
             firstSelection = true;
-            ++turn;
         }
     }
 
