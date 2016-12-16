@@ -84,6 +84,7 @@ public class GameActivity extends AppCompatActivity {
                 source.currentPiece = "empty";
             }
             firstSelection = true;
+            ++turn;
         }
         return;
     }

@@ -18,34 +18,190 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:columnCount="3"
-        android:rowCount="3"
+        android:columnCount="8"
+        android:rowCount="8"
         android:layout_centerInParent="true"
     >
 
         <com.software.group58.chess58.TileView
-            android:id="@+id/a3"
+            android:id="@+id/a8"
             android:layout_width="@dimen/tileSize"
             android:layout_height="@dimen/tileSize"
             android:background="@color/contrast"
             android:layout_margin="@dimen/tileMargin"
-            android:src="@drawable/white_knight"
-            app:label="a3"
-            app:currentPiece="@string/whiteKnight"
+            android:src="@drawable/black_rook"
             android:onClick="handleInput" />
 
         <com.software.group58.chess58.TileView
-            android:id="@+id/b3"
+            android:id="@+id/b8"
             android:layout_width="@dimen/tileSize"
             android:layout_height="@dimen/tileSize"
             android:background="@color/colorPrimary"
             android:layout_margin="@dimen/tileMargin"
-            app:label="b3"
+            android:src="@drawable/black_knight"
             android:onClick="handleInput"
             />
 
         <com.software.group58.chess58.TileView
-            android:id="@+id/c3"
+            android:id="@+id/c8"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/contrast"
+            android:layout_margin="@dimen/tileMargin"
+            android:src="@drawable/black_bishop"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/d8"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            android:src="@drawable/black_queen"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/e8"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/contrast"
+            android:layout_margin="@dimen/tileMargin"
+            android:src="@drawable/black_king"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/f8"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            android:src="@drawable/black_bishop"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/g8"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/contrast"
+            android:layout_margin="@dimen/tileMargin"
+            android:src="@drawable/black_knight"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/h8"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            android:src="@drawable/black_rook"
+            android:onClick="handleInput"
+            />
+
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/a7"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            android:src="@drawable/black_pawn"
+            android:onClick="handleInput" />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/b7"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/contrast"
+            android:layout_margin="@dimen/tileMargin"
+            android:src="@drawable/black_pawn"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/c7"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            android:src="@drawable/black_pawn"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/d7"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/contrast"
+            android:layout_margin="@dimen/tileMargin"
+            android:src="@drawable/black_pawn"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/e7"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            android:src="@drawable/black_pawn"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/f7"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/contrast"
+            android:layout_margin="@dimen/tileMargin"
+            android:src="@drawable/black_pawn"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/g7"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            android:src="@drawable/black_pawn"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/h7"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/contrast"
+            android:layout_margin="@dimen/tileMargin"
+            android:src="@drawable/black_pawn"
+            android:onClick="handleInput"
+            />
+
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/a6"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/contrast"
+            android:layout_margin="@dimen/tileMargin"
+            android:onClick="handleInput" />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/b6"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/c6"
             android:layout_width="@dimen/tileSize"
             android:layout_height="@dimen/tileSize"
             android:background="@color/contrast"
@@ -55,23 +211,286 @@
             />
 
         <com.software.group58.chess58.TileView
-            android:id="@+id/a2"
+            android:id="@+id/d6"
             android:layout_width="@dimen/tileSize"
             android:layout_height="@dimen/tileSize"
             android:background="@color/colorPrimary"
             android:layout_margin="@dimen/tileMargin"
-            app:label="a2"
             android:onClick="handleInput"
             />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/e6"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/contrast"
+            android:layout_margin="@dimen/tileMargin"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/f6"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/g6"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/contrast"
+            android:layout_margin="@dimen/tileMargin"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/h6"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            android:onClick="handleInput"
+            />
+
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/a5"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            android:onClick="handleInput" />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/b5"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/contrast"
+            android:layout_margin="@dimen/tileMargin"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/c5"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            app:label="c3"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/d5"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/contrast"
+            android:layout_margin="@dimen/tileMargin"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/e5"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/f5"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/contrast"
+            android:layout_margin="@dimen/tileMargin"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/g5"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/h5"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/contrast"
+            android:layout_margin="@dimen/tileMargin"
+            android:onClick="handleInput"
+            />
+
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/a4"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/contrast"
+            android:layout_margin="@dimen/tileMargin"
+            android:onClick="handleInput" />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/b4"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/c4"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/contrast"
+            android:layout_margin="@dimen/tileMargin"
+            app:label="c3"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/d4"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/e4"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/contrast"
+            android:layout_margin="@dimen/tileMargin"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/f4"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/g4"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/contrast"
+            android:layout_margin="@dimen/tileMargin"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/h4"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            android:onClick="handleInput"
+            />
+
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/a3"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            android:onClick="handleInput" />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/b3"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/contrast"
+            android:layout_margin="@dimen/tileMargin"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/c3"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            app:label="c3"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/d3"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/contrast"
+            android:layout_margin="@dimen/tileMargin"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/e3"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/f3"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/contrast"
+            android:layout_margin="@dimen/tileMargin"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/g3"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/h3"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/contrast"
+            android:layout_margin="@dimen/tileMargin"
+            android:onClick="handleInput"
+            />
+
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/a2"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/contrast"
+            android:layout_margin="@dimen/tileMargin"
+            android:src="@drawable/white_pawn"
+            android:onClick="handleInput" />
 
         <com.software.group58.chess58.TileView
             android:id="@+id/b2"
             android:layout_width="@dimen/tileSize"
             android:layout_height="@dimen/tileSize"
-            android:background="@color/contrast"
+            android:background="@color/colorPrimary"
             android:layout_margin="@dimen/tileMargin"
-            app:label="b2"
-            android:src="@drawable/ic_menu_camera"
+            android:src="@drawable/white_pawn"
             android:onClick="handleInput"
             />
 
@@ -79,29 +498,79 @@
             android:id="@+id/c2"
             android:layout_width="@dimen/tileSize"
             android:layout_height="@dimen/tileSize"
-            android:background="@color/colorPrimary"
+            android:background="@color/contrast"
             android:layout_margin="@dimen/tileMargin"
-            app:label="c2"
+            android:src="@drawable/white_pawn"
             android:onClick="handleInput"
             />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/d2"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            android:src="@drawable/white_pawn"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/e2"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/contrast"
+            android:layout_margin="@dimen/tileMargin"
+            android:src="@drawable/white_pawn"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/f2"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            android:src="@drawable/white_pawn"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/g2"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/contrast"
+            android:layout_margin="@dimen/tileMargin"
+            android:src="@drawable/white_pawn"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/h2"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            android:src="@drawable/white_pawn"
+            android:onClick="handleInput"
+            />
+
 
         <com.software.group58.chess58.TileView
             android:id="@+id/a1"
             android:layout_width="@dimen/tileSize"
             android:layout_height="@dimen/tileSize"
-            android:background="@color/contrast"
+            android:background="@color/colorPrimary"
             android:layout_margin="@dimen/tileMargin"
-            app:label="a1"
-            android:onClick="handleInput"
-            />
+            android:src="@drawable/white_rook"
+            android:onClick="handleInput" />
 
         <com.software.group58.chess58.TileView
             android:id="@+id/b1"
             android:layout_width="@dimen/tileSize"
             android:layout_height="@dimen/tileSize"
-            android:background="@color/colorPrimary"
+            android:background="@color/contrast"
             android:layout_margin="@dimen/tileMargin"
-            app:label="b1"
+            android:src="@drawable/white_knight"
             android:onClick="handleInput"
             />
 
@@ -109,10 +578,59 @@
             android:id="@+id/c1"
             android:layout_width="@dimen/tileSize"
             android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            android:src="@drawable/white_bishop"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/d1"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
             android:background="@color/contrast"
             android:layout_margin="@dimen/tileMargin"
-            app:label="c1"
-            android:src="@drawable/chess_logo"
+            android:src="@drawable/white_queen"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/e1"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            android:src="@drawable/white_king"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/f1"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/contrast"
+            android:layout_margin="@dimen/tileMargin"
+            android:src="@drawable/white_bishop"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/g1"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/tileMargin"
+            android:src="@drawable/white_knight"
+            android:onClick="handleInput"
+            />
+
+        <com.software.group58.chess58.TileView
+            android:id="@+id/h1"
+            android:layout_width="@dimen/tileSize"
+            android:layout_height="@dimen/tileSize"
+            android:background="@color/contrast"
+            android:layout_margin="@dimen/tileMargin"
+            android:src="@drawable/white_rook"
             android:onClick="handleInput"
             />
 
