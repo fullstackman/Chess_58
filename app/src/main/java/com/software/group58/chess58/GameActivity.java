@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class GameActivity extends AppCompatActivity {
-    public static int turn = 0;
+    public static int turn = 1;
     public static boolean gameOver=false;
     public static boolean drawAvailable = false;
     public static String player = "";
@@ -17,7 +19,7 @@ public class GameActivity extends AppCompatActivity {
     public static String whiteKing[] = new String[]{"e1","safe"};
     public static boolean stalemate = false;
     public static String passant = "";
-
+    ArrayList<String> validMoves = new ArrayList<String>();
 
     boolean firstSelection = true;
     TileView source = null;
@@ -30,29 +32,6 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.game_activity);
 
         Board.initializeBoard();
-
-        /*GridView gridview = (GridView) findViewById(R.id.boardView);
-        gridview.setAdapter(new TileAdapter(this));
-
-        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View v,
-                                    int position, long id) {
-                Toast.makeText(GameActivity.this, "You touched an item!",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });*/
-
-        //Tile sampleTile = (Tile) findViewById(R.id.sampleTile);
-        //sampleTile.setImageResource(Board.tiles[1][4]);
-
-        /*Tile knight = (Tile) findViewById(R.id.leftTile);
-        knight.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Tile source = (Tile) v;
-
-            }
-        });*/
     }
 
     private void hide() {
@@ -65,15 +44,38 @@ public class GameActivity extends AppCompatActivity {
 
     public void handleInput(View touchedTile){
         String currentLabel;
+
+        if(turn % 2 == 0)
+            player = "Black";
+        else
+            player = "White";
+
         if(firstSelection){
             source = (TileView) touchedTile;
             currentLabel = getResources().getResourceName(source.getId());
-            Toast.makeText(GameActivity.this, "You touched "+currentLabel.substring(currentLabel.length()-2),
-                    Toast.LENGTH_SHORT).show();
+            /*Toast.makeText(GameActivity.this, "You touched "+currentLabel.substring(currentLabel.length()-2),
+                    Toast.LENGTH_SHORT).show();*/
             if(source.getDrawable() == null)
                 return;
-            else
-                firstSelection = false;
+
+            String originPoints =  Mapping.convert(currentLabel.substring(currentLabel.length()-2));
+
+            int originFile = Character.getNumericValue(originPoints.charAt(0));
+            int originRank = Character.getNumericValue(originPoints.charAt(1));
+
+            if(Board.tiles[originFile][originRank].currentPiece.charAt(0) != Character.toLowerCase(player.charAt(0))) {
+                Toast.makeText(GameActivity.this, "That is not your piece!",
+                        Toast.LENGTH_SHORT).show();
+                return;
+            }
+            validMoves = Rules.findPossibleMoves( currentLabel.substring(currentLabel.length()-2) );
+            if(validMoves.isEmpty()) {
+                Toast.makeText(GameActivity.this, "Nothing is possible with that piece\nTry again...",
+                        Toast.LENGTH_SHORT).show();
+                return;
+            }
+            //at this point it is safe to act on this piece
+            firstSelection = false;
         }
         else{
             target = (TileView) touchedTile;
@@ -86,7 +88,6 @@ public class GameActivity extends AppCompatActivity {
             firstSelection = true;
             ++turn;
         }
-        return;
     }
 
     /**
