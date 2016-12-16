@@ -1,7 +1,5 @@
 package com.software.group58.chess58;
 
-import android.content.Context;
-
 /**
  * Documentation auto generated
  */
@@ -14,10 +12,10 @@ public class Board {
      * This method initializes the board.
      * 8x8 board with the 32 pieces of chess all aligned.
      */
-    public static void initializeBoard(Context gameContext) {
+    public static void initializeBoard() {
         for (int i = 8; i > -1; --i) {
             for (int j = 8; j > -1; --j) {
-                tiles[i][j] = new Tile(gameContext);
+                tiles[i][j] = new Tile();
 
                 //an ugly method for determining the tile file (column)
                 //TODO: make this elegant
@@ -56,7 +54,7 @@ public class Board {
 				/* White tiles have the property of both i and j having the same parity (odd or even)
 				 *  so if i + j is divisible by 2, then this is a white tile. Else it is a black tile (which has been set up by default).*/
                 if ((i + j) % 2 == 0)
-                    tiles[i][j].setBackgroundColor(0xFFFFFF);
+                    tiles[i][j].defaultColor = "     ";
             }
         }
 
@@ -77,7 +75,6 @@ public class Board {
 
         tiles[1][5].currentPiece = "wQ";
         tiles[1][4].currentPiece = "wK";
-        tiles[1][4].setImageResource(R.drawable.white_knight);
         tiles[8][5].currentPiece = "bQ";
         tiles[8][4].currentPiece = "bK";
 

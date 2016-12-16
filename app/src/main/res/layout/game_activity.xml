@@ -23,7 +23,7 @@
         android:layout_centerInParent="true"
     >
 
-        <com.software.group58.chess58.Tile
+        <com.software.group58.chess58.TileView
             android:id="@+id/a3"
             android:layout_width="@dimen/tileSize"
             android:layout_height="@dimen/tileSize"
@@ -34,7 +34,7 @@
             app:currentPiece="@string/whiteKnight"
             android:onClick="handleInput" />
 
-        <com.software.group58.chess58.Tile
+        <com.software.group58.chess58.TileView
             android:id="@+id/b3"
             android:layout_width="@dimen/tileSize"
             android:layout_height="@dimen/tileSize"
@@ -44,7 +44,7 @@
             android:onClick="handleInput"
             />
 
-        <com.software.group58.chess58.Tile
+        <com.software.group58.chess58.TileView
             android:id="@+id/c3"
             android:layout_width="@dimen/tileSize"
             android:layout_height="@dimen/tileSize"
@@ -54,7 +54,7 @@
             android:onClick="handleInput"
             />
 
-        <com.software.group58.chess58.Tile
+        <com.software.group58.chess58.TileView
             android:id="@+id/a2"
             android:layout_width="@dimen/tileSize"
             android:layout_height="@dimen/tileSize"
@@ -64,7 +64,7 @@
             android:onClick="handleInput"
             />
 
-        <com.software.group58.chess58.Tile
+        <com.software.group58.chess58.TileView
             android:id="@+id/b2"
             android:layout_width="@dimen/tileSize"
             android:layout_height="@dimen/tileSize"
@@ -75,7 +75,7 @@
             android:onClick="handleInput"
             />
 
-        <com.software.group58.chess58.Tile
+        <com.software.group58.chess58.TileView
             android:id="@+id/c2"
             android:layout_width="@dimen/tileSize"
             android:layout_height="@dimen/tileSize"
@@ -85,7 +85,7 @@
             android:onClick="handleInput"
             />
 
-        <com.software.group58.chess58.Tile
+        <com.software.group58.chess58.TileView
             android:id="@+id/a1"
             android:layout_width="@dimen/tileSize"
             android:layout_height="@dimen/tileSize"
@@ -95,7 +95,7 @@
             android:onClick="handleInput"
             />
 
-        <com.software.group58.chess58.Tile
+        <com.software.group58.chess58.TileView
             android:id="@+id/b1"
             android:layout_width="@dimen/tileSize"
             android:layout_height="@dimen/tileSize"
@@ -105,7 +105,7 @@
             android:onClick="handleInput"
             />
 
-        <com.software.group58.chess58.Tile
+        <com.software.group58.chess58.TileView
             android:id="@+id/c1"
             android:layout_width="@dimen/tileSize"
             android:layout_height="@dimen/tileSize"
