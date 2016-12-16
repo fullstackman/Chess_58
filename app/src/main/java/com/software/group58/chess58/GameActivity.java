@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class GameActivity extends AppCompatActivity {
@@ -21,6 +24,7 @@ public class GameActivity extends AppCompatActivity {
     public static String passant = "";
     String currentLabel;
     ArrayList<String> validMoves = new ArrayList<String>();
+    ArrayList<String> list = new ArrayList<String>();
 
     boolean firstSelection = true;
     TileView source = null;
@@ -113,6 +117,9 @@ public class GameActivity extends AppCompatActivity {
                 source.setImageDrawable(null);
                 source.currentPiece = "empty";
 
+                //add to list
+                list.add(startingLabel + " " + currentLabel.substring(currentLabel.length()-2));
+
                 /*TODO: Need to incorporate some UI elements that indicate check and checkmate!*/
                 boolean putEnemyInCheck;
                 if(player.equals("White")){
@@ -162,6 +169,23 @@ public class GameActivity extends AppCompatActivity {
                     the file to system memory
                     My tip is to just implement the serialization first and then add buttons and
                     dialogs later*/
+                    //Serialize
+                    try {
+                        FileOutputStream fos = new FileOutputStream("List of moves");
+                        ObjectOutputStream oos = new ObjectOutputStream(fos);
+                        oos.writeObject(list);
+                        Toast.makeText(GameActivity.this, "Moves have been saved",
+                                Toast.LENGTH_LONG).show();
+                        File f = new File(".");
+                        Toast.makeText(GameActivity.this, "File path = " + f.getAbsolutePath(),
+                                Toast.LENGTH_LONG).show();
+                        oos.close();
+                        fos.close();
+
+                    } catch (Exception ioe) {
+                        ioe.printStackTrace();
+                    }
+
                 }
                 return;
             }
