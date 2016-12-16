@@ -12,8 +12,8 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class GameActivity extends AppCompatActivity {
-    public static int turn = 1;
-    public static boolean gameOver=false;
+    public static int turn;
+    public static boolean gameOver;
     public static boolean drawAvailable = false;
     public static String player = "";
     public static boolean[] blackCastle = new boolean[]{true,true};
@@ -36,6 +36,8 @@ public class GameActivity extends AppCompatActivity {
         hide();
         setContentView(R.layout.game_activity);
         turn = 1;
+        gameOver = false;
+        player="";
         Board.initializeBoard();
     }
 
@@ -160,6 +162,15 @@ public class GameActivity extends AppCompatActivity {
                 firstSelection = true;
 
                 if(gameOver){
+
+                    String fullList = "Here are the recorded moves: \n";
+                    for(String x : list){
+                        fullList += x;
+                        fullList += ",\t";
+                    }
+                    Toast.makeText(GameActivity.this, fullList,
+                            Toast.LENGTH_LONG).show();
+
                     /*TODO: Show button the lets user save game. Give it an onclicklistener and have
                     that function start a dialog that asks for a name. Then do serialization and write
                     the file to system memory
@@ -170,10 +181,8 @@ public class GameActivity extends AppCompatActivity {
                         FileOutputStream fos = new FileOutputStream("List of moves");
                         ObjectOutputStream oos = new ObjectOutputStream(fos);
                         oos.writeObject(list);
-                        Toast.makeText(GameActivity.this, "Moves have been saved",
-                                Toast.LENGTH_LONG).show();
                         File f = new File(".");
-                        Toast.makeText(GameActivity.this, "File path = " + f.getAbsolutePath(),
+                        Toast.makeText(GameActivity.this, "Moves have been saved.\nFile path = " + f.getAbsolutePath(),
                                 Toast.LENGTH_LONG).show();
                         oos.close();
                         fos.close();
